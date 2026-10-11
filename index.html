@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Asistencia 2027</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <main class="contenedor">
+
+        <header class="encabezado">
+    <div class="marca">
+        <img
+            src="logo-arca.jpg"
+            alt="Logo de Membresía Arca de Noé"
+            class="logo-arca"
+        >
+
+        <div class="marca-texto">
+            <p class="etiqueta">REGISTRO SEMANAL</p>
+            <h1>Control de asistencia</h1>
+            <p class="subtitulo">
+                Organizaciones infantiles · 2027
+            </p>
+        </div>
+    </div>
+</header>
+
+        <section class="tarjeta">
+
+            <h2>Registrar reunión</h2>
+
+            <p class="descripcion">
+                Complete la información de la reunión y registre
+                la cantidad de niños y maestros presentes.
+            </p>
+
+            <form id="formularioAsistencia">
+
+                <div class="campo">
+                    <label for="organizacion">Organización y horario</label>
+
+                    <select id="organizacion" required>
+                        <option value="">Seleccione una organización</option>
+                        <option value="misioneritas">Misioneritas — Sábado</option>
+                        <option value="exploradores">Exploradores del Rey — Sábado</option>
+                        <option value="iglesia-infantil-jueves">Iglesia Infantil — Jueves</option>
+                        <option value="iglesia-infantil-domingo">Iglesia Infantil — Domingo P.M.</option>
+                        <option value="adn-kids">ADN Kids — Miércoles</option>
+                        <option value="escuela-dominical">Escuela Dominical</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="fecha">Fecha de la reunión</label>
+
+                    <select id="fecha" required>
+                        <option value="">Primero seleccione una organización</option>
+                    </select>
+                </div>
+
+                <fieldset class="campo">
+                    <legend>¿Se realizó la reunión?</legend>
+
+                    <label class="opcion">
+                        <input type="radio" name="realizada" value="si" required>
+                        Sí, se realizó
+                    </label>
+
+                    <label class="opcion">
+                        <input type="radio" name="realizada" value="no" required>
+                        No se realizó
+                    </label>
+                </fieldset>
+
+                <div id="datosAsistencia" class="seccion-condicional">
+
+                    <h3>Asistencia registrada</h3>
+
+                    <div class="campo">
+                        <label for="ninos">Cantidad de niños</label>
+                        <input
+                            type="number"
+                            id="ninos"
+                            min="0"
+                            step="1"
+                            placeholder="Ej. 25"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="maestros">Cantidad de maestros</label>
+                        <input
+                            type="number"
+                            id="maestros"
+                            min="0"
+                            step="1"
+                            placeholder="Ej. 4"
+                        >
+                    </div>
+
+                </div>
+
+                <div id="datosNoRealizada" class="seccion-condicional">
+
+                    <h3>Reunión no realizada</h3>
+
+                    <div class="campo">
+                        <label for="motivo">Motivo</label>
+
+                        <select id="motivo">
+                            <option value="">Seleccione el motivo</option>
+                            <option value="no-hubo-clases">No hubo clases</option>
+                            <option value="actividad-especial">Actividad especial</option>
+                            <option value="reunion-cancelada">Reunión cancelada</option>
+                            <option value="suspension">Suspensión</option>
+                            <option value="actividad-iglesia">Actividad de la iglesia</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="campo">
+                    <label for="observaciones">Observaciones (opcional)</label>
+
+                    <textarea
+                        id="observaciones"
+                        rows="3"
+                        placeholder="Escriba alguna observación si es necesario..."
+                    ></textarea>
+                </div>
+
+                <button type="submit" id="botonRegistrar">
+                    Registrar asistencia
+                </button>
+
+                <p id="mensaje" role="status" aria-live="polite"></p>
+
+            </form>
+
+        </section>
+
+        <footer>
+            <p>“Instruye al niño en su camino...”</p>
+            <p>Proverbios 22:6</p>
+            <p>Control de asistencia · 2027</p>
+        </footer>
+
+    </main>
+
+    <!-- Biblioteca de Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Código del formulario -->
+    <script src="script.js"></script>
+
+</body>
+</html>

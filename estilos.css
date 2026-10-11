@@ -1,0 +1,365 @@
+
+:root {
+    --azul: #202f59;
+    --azul-oscuro: #172343;
+    --rojo: #c92d36;
+    --fondo: #f3f5f9;
+    --blanco: #ffffff;
+    --texto: #29364d;
+    --suave: #718096;
+    --borde: #dfe5ee;
+    --celeste: #f0f3f9;
+    --verde: #287866;
+    --verde-suave: #edf7f2;
+    --sombra: 0 12px 32px rgba(26, 40, 73, 0.09);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--texto);
+    background: var(--fondo);
+    line-height: 1.6;
+}
+
+.contenedor {
+    width: min(100% - 30px, 850px);
+    margin: 36px auto;
+}
+
+/* ENCABEZADO Y LOGO */
+
+.encabezado {
+    margin-bottom: 24px;
+    padding: 28px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-left: 5px solid var(--rojo);
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo-arca {
+    display: block;
+    width: 112px;
+    height: 132px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.marca-texto {
+    min-width: 0;
+}
+
+.etiqueta {
+    display: inline-block;
+    margin: 0 0 9px;
+    padding: 5px 11px;
+    color: var(--azul);
+    background: #eef1f8;
+    border-radius: 20px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.encabezado h1 {
+    margin: 0;
+    color: var(--azul-oscuro);
+    font-size: clamp(1.65rem, 4vw, 2.25rem);
+    line-height: 1.2;
+    letter-spacing: -0.6px;
+}
+
+.subtitulo {
+    margin: 10px 0 0;
+    color: var(--suave);
+    font-size: 0.96rem;
+}
+
+/* TARJETA PRINCIPAL */
+
+.tarjeta {
+    padding: 32px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+}
+
+.tarjeta h2 {
+    margin: 0 0 8px;
+    color: var(--azul-oscuro);
+    font-size: 1.55rem;
+}
+
+.descripcion {
+    margin: 0 0 26px;
+    color: var(--suave);
+    font-size: 0.95rem;
+}
+
+/* CAMPOS */
+
+.campo {
+    min-width: 0;
+    margin: 0 0 22px;
+    padding: 0;
+    border: 0;
+}
+
+.campo > label,
+.campo > legend {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--azul);
+    font-size: 0.94rem;
+    font-weight: 700;
+}
+
+input[type="number"],
+select,
+textarea {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    color: var(--texto);
+    background: #fbfcfe;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    outline: none;
+    font: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+select {
+    cursor: pointer;
+}
+
+textarea {
+    min-height: 105px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(32, 47, 89, 0.11);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #9aa5b5;
+}
+
+/* OPCIONES SÍ / NO */
+
+fieldset.campo {
+    padding: 18px;
+    background: var(--celeste);
+    border: 1px solid var(--borde);
+    border-radius: 13px;
+}
+
+.campo legend {
+    padding: 0;
+}
+
+.opcion {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 9px;
+    margin: 4px 22px 4px 0;
+    color: var(--texto);
+    font-weight: 500 !important;
+    cursor: pointer;
+}
+
+.opcion input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: var(--rojo);
+}
+
+/* SECCIONES CONDICIONALES */
+
+.seccion-condicional {
+    margin-bottom: 22px;
+    padding: 21px;
+    background: #f7f8fb;
+    border: 1px solid var(--borde);
+    border-radius: 13px;
+}
+
+.seccion-condicional h3 {
+    margin: 0 0 17px;
+    color: var(--azul);
+    font-size: 1.06rem;
+}
+
+.seccion-condicional .campo:last-child {
+    margin-bottom: 0;
+}
+
+#datosAsistencia {
+    background: var(--verde-suave);
+    border-color: #d5e9df;
+}
+
+#datosAsistencia h3 {
+    color: var(--verde);
+}
+
+#datosNoRealizada {
+    background: #fff6f4;
+    border-color: #f0dcd9;
+}
+
+#datosNoRealizada h3 {
+    color: #a73737;
+}
+
+/* BOTÓN */
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    min-height: 52px;
+    margin-top: 8px;
+    padding: 14px 20px;
+    color: var(--blanco);
+    background: var(--azul);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 12px rgba(32, 47, 89, 0.16);
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button[type="submit"]:hover {
+    background: var(--rojo);
+    transform: translateY(-1px);
+}
+
+button[type="submit"]:disabled {
+    opacity: 0.65;
+    cursor: wait;
+    transform: none;
+}
+
+/* MENSAJES */
+
+#mensaje {
+    margin: 15px 0 0;
+    color: var(--azul);
+    font-size: 0.93rem;
+    text-align: center;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    margin-top: 22px;
+    padding: 22px 12px;
+    color: var(--suave);
+    text-align: center;
+    font-size: 0.87rem;
+}
+
+footer p {
+    margin: 4px 0;
+}
+
+footer p:first-child {
+    color: var(--azul);
+    font-size: 1rem;
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 600px) {
+    .contenedor {
+        width: calc(100% - 22px);
+        margin: 15px auto;
+    }
+
+    .encabezado {
+        padding: 20px 16px;
+        margin-bottom: 15px;
+        border-radius: 14px;
+    }
+
+    .marca {
+        gap: 14px;
+    }
+
+    .logo-arca {
+        width: 82px;
+        height: 100px;
+    }
+
+    .etiqueta {
+        font-size: 0.65rem;
+        letter-spacing: 0.7px;
+    }
+
+    .encabezado h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitulo {
+        font-size: 0.82rem;
+    }
+
+    .tarjeta {
+        padding: 22px 16px;
+        border-radius: 14px;
+    }
+
+    .tarjeta h2 {
+        font-size: 1.35rem;
+    }
+
+    fieldset.campo,
+    .seccion-condicional {
+        padding: 15px;
+    }
+
+    .opcion {
+        display: flex !important;
+        margin: 10px 0;
+    }
+
+    input[type="number"],
+    select,
+    textarea {
+        font-size: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}
